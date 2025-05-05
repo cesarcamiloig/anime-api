@@ -29,8 +29,8 @@ public class Manga {
     @JoinColumn(name = "tipo_id")
     private Tipo tipo;
 
-    @ManyToMany(mappedBy = "favoritos")
-    private List<Usuario> usuariosFavoritos;
+    @OneToMany(mappedBy = "manga", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Favorito> favoritos;
 
 	public Long getId() {
 		return id;
@@ -104,12 +104,12 @@ public class Manga {
 		this.tipo = tipo;
 	}
 
-	public List<Usuario> getUsuariosFavoritos() {
-		return usuariosFavoritos;
+	public List<Favorito> getFavoritos() {
+		return favoritos;
 	}
 
-	public void setUsuariosFavoritos(List<Usuario> usuariosFavoritos) {
-		this.usuariosFavoritos = usuariosFavoritos;
+	public void setFavoritos(List<Favorito> favoritos) {
+		this.favoritos = favoritos;
 	}
     
 }

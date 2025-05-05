@@ -15,13 +15,8 @@ public class Usuario {
     private String email;
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-        name = "favorito",
-        joinColumns = @JoinColumn(name = "usuario_id"),
-        inverseJoinColumns = @JoinColumn(name = "manga_id")
-    )
-    private List<Manga> favoritos;
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Favorito> favoritos;
 
 	public Long getId() {
 		return id;
@@ -63,11 +58,11 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public List<Manga> getFavoritos() {
+	public List<Favorito> getFavoritos() {
 		return favoritos;
 	}
 
-	public void setFavoritos(List<Manga> favoritos) {
+	public void setFavoritos(List<Favorito> favoritos) {
 		this.favoritos = favoritos;
 	}
     
