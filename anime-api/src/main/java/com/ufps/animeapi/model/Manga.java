@@ -15,7 +15,7 @@ public class Manga {
 
     private LocalDate fechaLanzamiento;
 
-    private int temporadas;
+    private Integer temporadas;
 
     private boolean anime;
     private boolean juego;
@@ -56,11 +56,11 @@ public class Manga {
 		this.fechaLanzamiento = fechaLanzamiento;
 	}
 
-	public int getTemporadas() {
+	public Integer getTemporadas() {
 		return temporadas;
 	}
 
-	public void setTemporadas(int temporadas) {
+	public void setTemporadas(Integer temporadas) {
 		this.temporadas = temporadas;
 	}
 
