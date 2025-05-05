@@ -6,6 +6,9 @@ import com.ufps.animeapi.model.Usuario;
 import com.ufps.animeapi.repository.FavoritoRepository;
 import com.ufps.animeapi.repository.MangaRepository;
 import com.ufps.animeapi.repository.UsuarioRepository;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -74,6 +77,7 @@ public class FavoritoController {
         return ResponseEntity.ok(Map.of("msg","Manga agregado a favoritos"));
     }
 
+    @Transactional
     @DeleteMapping("/{mangaId}")
     public ResponseEntity<?> delete(@PathVariable String username, @PathVariable Long mangaId) {
         if (usuarioRepo.findByUsername(username).isEmpty())
