@@ -40,9 +40,9 @@ public class FavoritoController {
              dto.put("fechaLanzamiento", f.getManga().getFechaLanzamiento().toString());
              dto.put("temporadas",    f.getManga().getTemporadas());
              dto.put("pais",          f.getManga().getPais().getNombre());
-             dto.put("anime",         f.getManga().isAnime());
-             dto.put("juego",         f.getManga().isJuego());
-             dto.put("pelicula",      f.getManga().isPelicula());
+             dto.put("anime",         f.getManga().getAnime());
+             dto.put("juego",         f.getManga().getJuego());
+             dto.put("pelicula",      f.getManga().getPelicula());
              dto.put("tipo",          f.getManga().getTipo().getNombre());
              return dto;
           })

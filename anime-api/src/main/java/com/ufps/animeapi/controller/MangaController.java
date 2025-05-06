@@ -94,9 +94,9 @@ public class MangaController {
         dto.put("fechaLanzamiento", manga.getFechaLanzamiento().toString());
         dto.put("temporadas", manga.getTemporadas());
         dto.put("pais", manga.getPais().getNombre());
-        dto.put("anime", manga.isAnime());
-        dto.put("juego", manga.isJuego());
-        dto.put("pelicula", manga.isPelicula());
+        dto.put("anime", manga.getAnime());
+        dto.put("juego", manga.getJuego());
+        dto.put("pelicula", manga.getPelicula());
         dto.put("tipo", manga.getTipo().getNombre());
         return dto;
     }

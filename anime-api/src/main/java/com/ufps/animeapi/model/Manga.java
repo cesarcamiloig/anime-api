@@ -17,9 +17,9 @@ public class Manga {
 
     private Integer temporadas;
 
-    private boolean anime;
-    private boolean juego;
-    private boolean pelicula;
+    private Boolean anime;
+    private Boolean juego;
+    private Boolean pelicula;
 
     @ManyToOne
     @JoinColumn(name = "pais_id")
@@ -64,27 +64,27 @@ public class Manga {
 		this.temporadas = temporadas;
 	}
 
-	public boolean isAnime() {
+	public Boolean getAnime() {
 		return anime;
 	}
 
-	public void setAnime(boolean anime) {
+	public void setAnime(Boolean anime) {
 		this.anime = anime;
 	}
 
-	public boolean isJuego() {
+	public Boolean getJuego() {
 		return juego;
 	}
 
-	public void setJuego(boolean juego) {
+	public void setJuego(Boolean juego) {
 		this.juego = juego;
 	}
 
-	public boolean isPelicula() {
+	public Boolean getPelicula() {
 		return pelicula;
 	}
 
-	public void setPelicula(boolean pelicula) {
+	public void setPelicula(Boolean pelicula) {
 		this.pelicula = pelicula;
 	}
 
